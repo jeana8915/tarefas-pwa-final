@@ -1,11 +1,5 @@
 <template>
   <div class="task-item" :class="{ done: task.done }">
-     <img
-      v-if="task.img_url"
-      :src="task.img_url"
-      class="task-thumbnail"
-      alt="Imagem da tarefa"
-    />
     <label class="task-label">
       <input
         type="checkbox"
@@ -31,7 +25,7 @@ defineProps({
   },
 });
 
-defineEmits(['toggle', 'remove', 'edit']);
+defineEmits(["toggle", "remove", "edit"]);
 </script>
 
 <style scoped>
@@ -59,7 +53,7 @@ defineEmits(['toggle', 'remove', 'edit']);
   flex: 1;
 }
 
-.task-label input[type='checkbox'] {
+.task-label input[type="checkbox"] {
   width: 20px;
   height: 20px;
   accent-color: #4a90d9;
@@ -104,14 +98,5 @@ defineEmits(['toggle', 'remove', 'edit']);
 
 .task-remove:hover {
   text-decoration: underline;
-}
-
-.task-thumbnail {
-  width: 44px;
-  height: 44px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid #eee;
-  flex-shrink: 0;
 }
 </style>
